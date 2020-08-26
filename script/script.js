@@ -11,10 +11,14 @@ const quotes = [
 
 ]
 
-const con = document.querySelector('.container')
-const btn = document.querySelector(".generate");
 
-btn.addEventListener("click", function () {
+const btn = $('.generate');
+const quoteArea = $('.quotes');
+
+function changeQuotes() {
   let random = Math.floor(Math.random() * quotes.length);
-  document.querySelector(".quotes ").textContent = quotes[random];
-});
+  quoteArea.text(quotes[random]);
+
+}
+
+btn.click(changeQuotes)
